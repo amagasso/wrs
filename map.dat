@@ -1,0 +1,30 @@
+[
+    {
+      "id" : "kitchen",
+      "tl_x" : 0,
+      "tl_y" : 0,
+      "br_x" : 4,
+      "br_y" : 4
+    },
+    {
+      "id" : "living room",
+      "tl_x" : 0,
+      "tl_y" : 4,
+      "br_x" : 6,
+      "br_y" : 9
+    },
+    {
+      "id" : "bed room",
+      "tl_x" : 6,
+      "tl_y" : 0,
+      "br_x" : 10,
+      "br_y" : 4
+    },
+    {
+      "id" : "lobby",
+      "tl_x" : 6,
+      "tl_y" : 6,
+      "br_x" : 10,
+      "br_y" : 9
+    }
+]

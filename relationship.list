@@ -1,0 +1,26 @@
+{
+"trash can": "inside",
+"cabinet": "in",
+"sink": "in",
+ "book shelf": "in",
+ "cafe set table": "on",
+ "CD rack":"in",
+ "table": "on top of" ,
+ "sofa": "on",
+ "small table": "on",
+ "magazine rack":"inside",
+ "sofa": "on",
+ "TV shelf": "in",
+ "chair": "on",
+ "cupboard": "on",
+ "gaz stove": "on",
+ "mizukiritana": "on",
+ "rack":"inside",
+ "bed": "in",
+ "wagon":"inside",
+ "shelf":"on",
+ "kitchen": "in",
+ "lobby":"inside",
+ "living room":"in"
+
+}
