@@ -17,5 +17,11 @@ relation
 
 launch: python3 nlg.py
 
+expected output:
+bottle
+kitchen
+table
+on top of
+
 pylint score: 9.71
 
