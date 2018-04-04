@@ -18,10 +18,17 @@ relation
 launch: python3 nlg.py
 
 expected output:
-bottle
-kitchen
-table
-on top of
 
-pylint score: 9.71
+object: bottle
+
+room name: kitchen
+
+piecce of furniture: table
+
+relation: on top of
+
+generated sentence: The bottle is on top of the kitchen table
+
+
+pylint score: 8.97
 
