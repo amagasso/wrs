@@ -163,7 +163,7 @@ if __name__ == '__main__':
     INS_ID = get_instance_id(TASK_INFO)
     OBJ_DICT = load_dict('obj_class.dict')
     OBJ_NAME_BY_CLASS = id_to_target_name_by_class(INS_ID, OBJ_DICT)
-    print(OBJ_NAME_BY_CLASS)
+    print('object: ' + OBJ_NAME_BY_CLASS)
 
     # get landmark description
     ENV = load_dict('map.dat')
@@ -175,16 +175,16 @@ if __name__ == '__main__':
     FUR_ID = pos_to_furniture_id(FUR, TARGET_POS["x"],
                                  TARGET_POS["y"], TARGET_POS["z"])
     FUR_NAME = get_fur_name(FUR_ID, FUR_DICT)
-    print(ROOM_NAME)
-    print(FUR_NAME)
+    print('room name: ' + ROOM_NAME)
+    print('piecce of furniture: ' + FUR_NAME)
 
     # get relationship description
     REL_DICT = load_dict('relationship.list')
     REL = relationship_descr(REL_DICT, ROOM_NAME, FUR_NAME)
-    print(REL)
+    print('relation: ' + REL)
 
     # final sentence
     PHRASE = "The " + OBJ_NAME_BY_CLASS + " is " + REL + " the " + ROOM_NAME
     if FUR_NAME is not None:
         PHRASE = PHRASE + "  " + FUR_NAME
-    print(PHRASE)
+    print('generated sentence: ' +PHRASE)
