@@ -100,7 +100,7 @@ def pos_to_room_id(env, target_x, target_y, target_z):
     :param target_z:
 
     """
-    #unused parameter for now target_z
+    # unused parameter for now target_z
     for item in env:
         if(target_x > item["tl_x"] and target_x < item["br_x"] and
            target_y > item["tl_y"] and target_y < item["br_y"]):
@@ -117,7 +117,7 @@ def pos_to_furniture_id(furniture, target_x, target_y, target_z):
     :param target_z:
 
     """
-    #unused parameter for now target_z
+    # unused parameter for now target_z
     for item in furniture:
         if(target_x > item["x_c"]-item["d_x"]/2. and target_x < item["x_c"] +
            item["d_x"]/2. and target_y > item["y_c"]-item["d_y"]/2. and
@@ -187,4 +187,4 @@ if __name__ == '__main__':
     PHRASE = "The " + OBJ_NAME_BY_CLASS + " is " + REL + " the " + ROOM_NAME
     if FUR_NAME is not None:
         PHRASE = PHRASE + " " + FUR_NAME
-    print('generated sentence: ' +PHRASE)
+    print('generated sentence: ' + PHRASE)
