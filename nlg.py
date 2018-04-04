@@ -184,7 +184,7 @@ if __name__ == '__main__':
     print(REL)
 
     # final sentence
-    PHRASE = "The " + OBJ_NAME_BY_CLASS + " is " + REL + " " + ROOM_NAME
+    PHRASE = "The " + OBJ_NAME_BY_CLASS + " is " + REL + " the " + ROOM_NAME
     if FUR_NAME is not None:
-        PHRASE = PHRASE + " the " + FUR_NAME
+        PHRASE = PHRASE + "  " + FUR_NAME
     print(PHRASE)
