@@ -91,24 +91,19 @@ def id_to_target_name_by_class(ins_id, loaded_dict):
     return load_key_value(id_class, loaded_dict)
 
 
-def pos_to_room_id(env, target_x, target_y, target_z):
-    """Get the room in which is positioned the target object
-
+def pos_to_room_id(env, pos):
+    """Get the room corresponding to a given position
     :param env:
-    :param target_x:
-    :param target_y:
-    :param target_z:
-
+    :param pos:
     """
-    # unused parameter for now target_z
     for item in env:
-        if(target_x > item["tl_x"] and target_x < item["br_x"] and
-           target_y > item["tl_y"] and target_y < item["br_y"]):
+        if(pos["x"] > item["tl_x"] and pos["x"] < item["br_x"] and
+           pos["y"] > item["tl_y"] and pos["y"] < item["br_y"]):
             return item["id"]
     return None
 
 
-def pos_to_furniture_id(furniture, target_x, target_y, target_z):
+def pos_to_furniture_id(furniture, pos):
     """Get the piece of furniture in which is positioned the target object
 
     :param furniture:
@@ -117,12 +112,12 @@ def pos_to_furniture_id(furniture, target_x, target_y, target_z):
     :param target_z:
 
     """
-    # unused parameter for now target_z
     for item in furniture:
-        if(target_x > item["x_c"]-item["d_x"]/2. and target_x < item["x_c"] +
-           item["d_x"]/2. and target_y > item["y_c"]-item["d_y"]/2. and
-           target_y < item["y_c"]+item["d_y"]/2.):
+        if(pos["x"] > item["x_c"]-item["d_x"]/2. and pos["x"] < item["x_c"] +
+           item["d_x"]/2. and pos["y"] > item["y_c"]-item["d_y"]/2. and
+           pos["y"] < item["y_c"]+item["d_y"]/2.):
             return item["id"]
+    return None
 
 
 def get_fur_name(fur_id, loaded_dict):
@@ -137,6 +132,35 @@ def get_fur_name(fur_id, loaded_dict):
         return loaded_dict[id_class]
     else:
         return "not found"
+
+
+def room_name_to_command(room_name):
+    """Return the command instruction to go in the appropriate room
+
+    :param room_name:
+
+    """
+    return "Go to the " + room_name
+
+
+def furniture_name_to_command(furniture_name):
+    """Return the command instruction to find the appropriate piece of furniture
+
+    :param furniture_name:
+
+    """
+    return "Find the " + furniture_name
+
+
+def obj_name_to_command(furniture_name, rel_name, obj_name):
+    """Return the command instruction to take the correct object
+
+    :param furniture_name:
+    :param rel_name:
+    :param obj_name:
+
+    """
+    return "Take the " + obj_name + " " + rel_name + " the " + furniture_name
 
 
 def relationship_descr(relationship_dict, room_name, fur_name):
@@ -170,21 +194,22 @@ if __name__ == '__main__':
     FUR = load_dict('furniture.dat')
     FUR_DICT = load_dict('fur.dict')
     TARGET_POS = get_target_pos(TASK_INFO)
-    ROOM_NAME = pos_to_room_id(ENV, TARGET_POS["x"], TARGET_POS["y"],
-                               TARGET_POS["z"])
-    FUR_ID = pos_to_furniture_id(FUR, TARGET_POS["x"],
-                                 TARGET_POS["y"], TARGET_POS["z"])
+    ROOM_NAME = pos_to_room_id(ENV, TARGET_POS)
+    FUR_ID = pos_to_furniture_id(FUR, TARGET_POS)
     FUR_NAME = get_fur_name(FUR_ID, FUR_DICT)
     print('room name: ' + ROOM_NAME)
-    print('piecce of furniture: ' + FUR_NAME)
+    print('piece of furniture: ' + FUR_NAME)
 
     # get relationship description
     REL_DICT = load_dict('relationship.list')
     REL = relationship_descr(REL_DICT, ROOM_NAME, FUR_NAME)
     print('relation: ' + REL)
 
-    # final sentence
-    PHRASE = "The " + OBJ_NAME_BY_CLASS + " is " + REL + " the " + ROOM_NAME
-    if FUR_NAME is not None:
-        PHRASE = PHRASE + " " + FUR_NAME
-    print('generated sentence: ' + PHRASE)
+    # final sentences
+    # PHRASE = "The " + OBJ_NAME_BY_CLASS + " is " + REL + " the " + ROOM_NAME
+    # if FUR_NAME is not None:
+    #    PHRASE = PHRASE + " " + FUR_NAME
+    # print('generated sentence: ' + PHRASE)
+    print(room_name_to_command(ROOM_NAME))
+    print(furniture_name_to_command(FUR_NAME))
+    print(obj_name_to_command(FUR_NAME, REL, OBJ_NAME_BY_CLASS))
