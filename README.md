@@ -1,4 +1,7 @@
 # wrs
+This module is designed for Human Navigation in virtual space.
+This module is composed of functions allowing to generate a sentence to
+describe the position of a target object.
 #required json structure:
 
 message (task_info)
@@ -17,18 +20,22 @@ relation
 
 launch: python3 nlg.py
 
-expected output:
+#expected output:
 
 object: bottle
 
 room name: kitchen
 
-piecce of furniture: table
+piece of furniture: table
 
 relation: on top of
 
-generated sentence: The bottle is on top of the kitchen table
+Go to the kitchen
+
+Find the table
+
+Take the bottle on top of the table
 
 
-pylint score: 8.97
+pylint score: 9.05
 
