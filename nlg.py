@@ -13,23 +13,23 @@ Authors: A. Magassouba
 import json
 
 
-def get_instance_id(loaded_file):
+def get_instance_id(loaded_file, index):
     """Get the target object ID from the task_info message
 
     :param loaded_file:
 
     """
-    inst_id = loaded_file["task_info"][0]["target"]
+    inst_id = loaded_file["task_info"][index]["target"]
     return inst_id
 
 
-def get_target_pos(loaded_file):
+def get_target_pos(loaded_file, index):
     """Get the target object position from the task_info message
 
     :param loaded_file:
 
     """
-    pos = loaded_file["task_info"][0]["position"]
+    pos = loaded_file["task_info"][index]["position"]
     return pos
 
 
@@ -184,7 +184,7 @@ if __name__ == '__main__':
     # get name of the object from the instance ID
     # (unity->)message #json
     TASK_INFO = load_dict('message.txt')
-    INS_ID = get_instance_id(TASK_INFO)
+    INS_ID = get_instance_id(TASK_INFO, 0)
     OBJ_DICT = load_dict('obj_class.dict')
     OBJ_NAME_BY_CLASS = id_to_target_name_by_class(INS_ID, OBJ_DICT)
     print('object: ' + OBJ_NAME_BY_CLASS)
@@ -193,7 +193,7 @@ if __name__ == '__main__':
     ENV = load_dict('map.dat')
     FUR = load_dict('furniture.dat')
     FUR_DICT = load_dict('fur.dict')
-    TARGET_POS = get_target_pos(TASK_INFO)
+    TARGET_POS = get_target_pos(TASK_INFO, 0)
     ROOM_NAME = pos_to_room_id(ENV, TARGET_POS)
     FUR_ID = pos_to_furniture_id(FUR, TARGET_POS)
     FUR_NAME = get_fur_name(FUR_ID, FUR_DICT)
