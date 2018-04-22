@@ -184,7 +184,7 @@ if __name__ == '__main__':
     # get name of the object from the instance ID
     # (unity->)message #json
     TASK_INFO = load_dict('message.txt')
-    INS_ID = get_instance_id(TASK_INFO, 0)
+    INS_ID = get_instance_id(TASK_INFO, 1)
     OBJ_DICT = load_dict('obj_class.dict')
     OBJ_NAME_BY_CLASS = id_to_target_name_by_class(INS_ID, OBJ_DICT)
     print('object: ' + OBJ_NAME_BY_CLASS)
@@ -193,7 +193,7 @@ if __name__ == '__main__':
     ENV = load_dict('map.dat')
     FUR = load_dict('furniture.dat')
     FUR_DICT = load_dict('fur.dict')
-    TARGET_POS = get_target_pos(TASK_INFO, 0)
+    TARGET_POS = get_target_pos(TASK_INFO, 1)
     ROOM_NAME = pos_to_room_id(ENV, TARGET_POS)
     FUR_ID = pos_to_furniture_id(FUR, TARGET_POS)
     FUR_NAME = get_fur_name(FUR_ID, FUR_DICT)
