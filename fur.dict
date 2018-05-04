@@ -1,38 +1,77 @@
 {
+
   "trashbox" : "trash can",
+
   "cabinet": "cabinet",
+
   "sink": "sink",
+
   "bookshelf": "book shelf",
+
   "cafe_set_mota_table": "cafe set table",
+
   "CDrack": "CD rack",
+
   "changingtable": "table",
+
   "cornersofa" : "sofa",
+
   "lowtable" : "small table",
+
   "magazinerack": "magazine rack",
+
   "sidetable": "table",
+
   "sofa": "sofa",
+
   "chair": "chair",
+
   "TVbass": "TV shelf",
+
   "chair": "chair",
+
   "cupboard": "cupboard",
+
   "diningTable": "dining table",
+
   "gazcooker":"gaz stove",
+
   "mizukiritana": "mizukiritana",
+
   "rack":"rack",
+
   "bed": "bed",
+
   "iron": "bed",
+
   "wagon":"wagon",
+
   "shelf":"shelf",
+
   "kitchen": "drawer",
+
   "wood":"table",
+
   "trashcan":"trash can",
+
   "wide":"trash box",
+
   "block":"block",
+
   "door":"door",
+
   "drawer":"drawer",
+
   "wall":"cabinet",
+
   "modular":"kitchen board",
+
   "cardboard" : "cardboard box",
-  "fridge":"fridge"
+
+  "fridge":"fridge",
+
+   "widecabinet": "wide white cabinet",
+
+  "whiteshelf": "white shelf" 
 
 }
