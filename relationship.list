@@ -27,6 +27,7 @@
  "kitchen board": "on",
  "cardboard box" :"in",
  "wide white cabinet": "in",
- "white shelf": "in"
+ "white shelf": "in",
+ "floor": "on"
  
 }
