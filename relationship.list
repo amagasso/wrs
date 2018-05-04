@@ -16,11 +16,17 @@
  "gaz stove": "on",
  "mizukiritana": "on",
  "rack":"inside",
- "bed": "in",
+ "bed": "on",
  "wagon":"inside",
  "shelf":"on",
  "kitchen": "in",
  "lobby":"inside",
- "living room":"in"
-
+ "living room":"in",
+ "dining table": "on",
+ "cabinet":"in",
+ "kitchen board": "on",
+ "cardboard box" :"in",
+ "wide white cabinet": "in",
+ "white shelf": "in"
+ 
 }
